@@ -36,7 +36,7 @@ v: 1
                     </div>
                     <div class="mdui-panel-item-body">
                 {% for post in site.posts %}
-                {%assign x = post.categories | last%}
+                {% assign x = post.category %}
                 {% if x == categorie.id %}
                 {% if post.storyline.v1 %}
                         <a class="mdui-btn mdui-btn-block" href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
@@ -50,15 +50,17 @@ v: 1
         </div>
     </div>
     <div class="mdui-col-sm-12">
-        <h1 class="mdui-text-center">从 E-learning Heroes 和相关视频中获取帮助</h1>
-        <div class="mdui-row-sm-1 mdui-row-md-3">
+        <h1 class="mdui-text-center">从 E-learning Heroes 中获取帮助</h1>
+        <div class="mdui-row-sm-1 mdui-row-md-2">
             <div class="mdui-col">
-                test
+                <div class="mdui-card-header k-footer">
+                <img src="https://ooo.0o0.ooo/2017/05/19/591eda3dc0f84.png"/>
+                <div class="mdui-card-header-title mdui-typo"> <a href="https://community.articulate.com/">E-learning Heroes</a> </div>
+                <div class="mdui-card-header-subtitle"> E-learning Heroes 是 articulate 官方 community ，其中有大量教程、讨论、示例、模板等。该站与本站无任何关系。</div>
+            </div>
             </div>
             <div class="mdui-col">
-                test
             </div>
         </div>
     </div>
 </div>
-<br><br><br>

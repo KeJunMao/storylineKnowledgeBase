@@ -4,15 +4,55 @@ layout: default
 <div class="mdui-row">
     <div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-8">
         <div class="mdui-card">
-            <div class="mdui-card-content">
+            <div class="mdui-card-content k-card-content" id="k-page-content">
                 <div class="mdui-typo">
+                    <div class="mdui-tab" mdui-tab>
+                      <a href="#example1-tab1" class="mdui-ripple">文章兼容的版本</a>
+                      <a href="#example1-tab2" class="mdui-ripple">文章标签</a>
+                      <a href="#example1-tab3" class="mdui-ripple">文章日期</a>
+                    </div>
+                    <div id="example1-tab1" class="mdui-p-a-2">
+                        <ul class="mdui-list">
+                          {% for v in site.data.version.storyline.v %}
+                          <li class="mdui-list-item mdui-ripple">
+                            <div class="mdui-list-item-content">{{site.data.version.storyline.name}}-{{v.v}}</div>
+                            {% assign version = v.v | prepend:'v' %}
+                            {% if page.storyline.[version] %}
+                            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe5ca;</i>
+                            {% else %}
+                            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe14c;</i>
+                            {% endif %}
+                          </li>
+                          {% endfor %}
+                        </ul>
+                    </div>
+                    <div id="example1-tab2" class="mdui-p-a-2">
+                            {% for tag in page.tags %}
+                        <div class="mdui-chip">
+                          <span class="mdui-chip-title">{{tag}}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div id="example1-tab3" class="mdui-p-a-2">
+                        <ul class="mdui-list">
+                          <li class="mdui-subheader">创建日期：</li>
+                          <li class="mdui-list-item mdui-ripple">{{ page.date | date: '%B %d, %Y' }}</li>
+                          <li class="mdui-subheader">最后更新：</li>
+                          <li class="mdui-list-item mdui-ripple">{{ page.lastDate | date: '%B %d, %Y' }}</li>
+                        </ul>
+                    </div>
+
+
+
+
+
                     {{ content }}
                 </div>
             </div>
         </div>
         <br>
         <div class="mdui-card">
-            <div class="mdui-card-primary">
+            <div class="mdui-card-primary k-card-content">
                 <div class="mdui-card-primary-title">Authors</div>
                 <div class="mdui-card-primary-subtitle">攥写本文章的作者们</div>
             </div>
@@ -33,7 +73,7 @@ layout: default
         </div>
         <br>
         <div class="mdui-card">
-            <div class="mdui-card-primary">
+            <div class="mdui-card-primary k-card-content">
                 <div class="mdui-card-primary-title">Helpers</div>
                 <div class="mdui-card-primary-subtitle">曾帮助攥写本文章的人们</div>
             </div>
@@ -60,6 +100,8 @@ layout: default
         </div>
     </div>
     <div class="mdui-hidden-sm-down mdui-col-md-4">
-        {% include toc.html %}
+        
+            {% include toc.html %}
+        
     </div>
 </div>

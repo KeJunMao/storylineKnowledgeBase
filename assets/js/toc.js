@@ -10,7 +10,7 @@
       showEffect: 'show', // values: [show|slideDown|fadeIn|none]
       showSpeed: 'slow', // set to 0 to deactivate effect
       classes: { list: 'mdui-list',
-                 item: ''
+                 item: 'k-toc-item'
                }
     },
     settings = $.extend(defaults, options);

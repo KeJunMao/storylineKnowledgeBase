@@ -106,3 +106,36 @@ input[type="text"]:focus:not([readonly]){
     text-align: left;
     color: white;
 }
+.pinned{
+    position: fixed;
+    /*top: 64px;*/
+}
+.k-toc-item{
+    min-width: 300px;
+}
+.k-footer img{
+    float:left;width:70px;
+}
+.k-footer .mdui-card-header-title {
+    margin-left:85px;line-height:35px;
+}
+.k-footer .mdui-card-header-subtitle{
+    margin-left:85px;line-height:20px;white-space:normal
+}
+.k-card-content{
+    padding: 35px 35px 10px 35px;
+}
+.mdui-typo table{
+    width: 100%;
+}
+.mdui-typo td, th {
+    padding: 15px 5px;
+    lighting-color:red;
+    display: table-cell;
+}
+.mdui-typo table>thead>tr, table>tbody>tr {
+    border-bottom: 1px solid #d0d0d0;
+}
+.mdui-typo thead tr th{
+    font-weight: bold;
+}
