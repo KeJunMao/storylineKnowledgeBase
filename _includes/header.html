@@ -1,0 +1,21 @@
+<div class="k-content-background"></div>
+<header class="mdui-appbar mdui-appbar-fixed mdui-shadow-1">
+  <div class="mdui-toolbar mdui-color-theme" style="background-color: white;">
+    <a href="javascript:;" mdui-drawer="{target: '#drawer'}" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+    <a href="{{'/index.html' | prepend: site.baseurl }}" class="mdui-typo-headline mdui-hidden-sm-down">{{ site.title }}</a>
+    <a href="javascript:;" class="mdui-typo-title">{{ page.title }}</a>
+    <div class="k-search mdui-hidden-sm-down">
+      <div class="k-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></div>
+      <div class="k-text"><input type="text" placeholder="搜索" id="search-input"></div>
+    </div>
+    <!--<div class="mdui-toolbar-spacer"></div>-->
+    <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-hidden-md-up"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+  </div>
+</header>
+<div class="mdui-drawer mdui-drawer-close" id="drawer">
+  <div class="mdui-list">
+    {% for p in site.data.menus %}
+    <a href="{{p.url | prepend: site.baseurl }}" class="mdui-list-item mdui-ripple {% if p.url == page.url %}mdui-list-item-active{% endif %}"><i class="mdui-list-item-icon mdui-icon material-icons">{{p.icon}}</i><div class="mdui-list-item-content">{{p.name}}</div></a>
+    {% endfor %}
+  </div>
+</div>

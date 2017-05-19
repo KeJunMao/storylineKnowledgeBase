@@ -1,0 +1,64 @@
+---
+layout: default
+title: Storyline 1 知识库
+v: 1
+---
+
+<div class="mdui-row">
+    <div class="mdui-col-sm-12">
+        <div class="mdui-card">
+            <div class="mdui-card-content">
+                <div class="mdui-container">
+                    <p style="font-size:24px;margin:16px 0px;">欢迎使用 Storyline 1 知识库</p>
+                </div>
+            </div>
+            <div class="mdui-panel mdui-panel-gapless" mdui-panel="{accordion: true}">
+                <div class="mdui-panel-item mdui-panel-item-open">
+                    <div class="mdui-panel-item-header">
+                        <div class="mdui-panel-item-title">热门文章</div>
+                        <i class="mdui-panel-item-arrow mdui-icon material-icons">&#xe313;</i>
+                    </div>
+                    <div class="mdui-panel-item-body">
+                {% for post in site.posts %}
+                {% if post.hot %}
+                {% if post.storyline.v1 %}
+                        <a class="mdui-btn mdui-btn-block" href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                    </div>
+                </div>
+                {% for categorie in site.data.categories %}
+                <div class="mdui-panel-item">
+                    <div class="mdui-panel-item-header">
+                        <div class="mdui-panel-item-title">{{categorie.name}}</div>
+                        <i class="mdui-panel-item-arrow mdui-icon material-icons">&#xe313;</i>
+                    </div>
+                    <div class="mdui-panel-item-body">
+                {% for post in site.posts %}
+                {%assign x = post.categories | last%}
+                {% if x == categorie.id %}
+                {% if post.storyline.v1 %}
+                        <a class="mdui-btn mdui-btn-block" href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
+                {% endif %}
+                {% endif %}
+                {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="mdui-col-sm-12">
+        <h1 class="mdui-text-center">从 E-learning Heroes 和相关视频中获取帮助</h1>
+        <div class="mdui-row-sm-1 mdui-row-md-3">
+            <div class="mdui-col">
+                test
+            </div>
+            <div class="mdui-col">
+                test
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br>

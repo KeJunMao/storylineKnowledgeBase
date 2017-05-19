@@ -1,0 +1,66 @@
+---
+layout: default
+title: 首页
+---
+<div class="mdui-row">
+    <div class="mdui-col-sm-12">
+        <div class="mdui-card">
+            <div class="mdui-card-content">
+                <div class="mdui-container">
+                    <div class="mdui-row-sm-4 mdui-row-md-6 mdui-row-lg-6">
+                        {% assign  sl = site.data.version.storyline %}
+                        {% for v in sl.v %}
+                        <div class="mdui-col">
+                            <div class="mdui-hoverable k-sl-item mdui-ripple">
+                            <a class="mdui-text-center" href="{{v.url | prepend: site.baseurl }}">
+                                <img class="mdui-center" src="{{ v.icon | prepend: site.baseurl }}" alt="">
+                                <p>{{sl.name}}-{{v.v}}</p>
+                            </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="mdui-divider"></div>
+                <div class="mdui-container">
+                    <div class="mdui-row-sm-1 mdui-row-md-3">
+                        <div class="mdui-col">
+                            <div class="k-additional-resources">
+                                <h2>捐赠</h2>
+                                <ul>
+                                    <li>只有当您想感谢我已经做的工作​​，而不是期望今后的工作，请捐赠。</li>
+                                    <li>捐赠并不意味着您可以享受私人帮助或支持。</li>
+                                    <li>如果您仍然决定捐赠 - Thank you, it's very much appreciated!</li>
+                                    <li>您可以使用支付宝、微信捐赠。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mdui-col">
+                            <div class="k-additional-resources">
+                                <h2>贡献</h2>
+                                <ul>
+                                    <li>您必须已经加入该QQ群。</li>
+                                    <li>您曾熟练使用storyline某版本。</li>
+                                    <li>您能够攥写文章并提供高清截图。</li>
+                                    <li>如果您有能力贡献，您的昵称会出现在内容页的作者项。</li>
+                                    <li>您可以直接编辑源代码或将文章通过QQ发给我参与贡献。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mdui-col">
+                            <div class="k-additional-resources">
+                                <h2>反馈</h2>
+                                <ul>
+                                    <li>在该QQ群中直接反馈。</li>
+                                    <li>在该git仓库中提交issue。</li>
+                                    <li>直接在内容页提交评论。</li>
+                                    <li>如果您的反馈真实有效，您的昵称将会出现在对应内容页帮助者项。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

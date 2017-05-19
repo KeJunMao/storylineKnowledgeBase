@@ -1,0 +1,69 @@
+- id: "downloadInstallOpen"
+  name: 下载/安装/打开
+  url: 
+- id: "storylineInterface"
+  name: 软件界面
+  url: 
+- id: "slidesAndLayers"
+  name: 幻灯片与图层
+  url: 
+- id: "importAndExport"
+  name: 导入与导出
+  url: 
+- id: "quizSlides"
+  name: 测验幻灯片
+  url: 
+- id: "questionEditor"
+  name: 问题编辑器
+  url: 
+- id: "resultSlides"
+  name: 结果幻灯片
+  url: 
+- id: "questionBanks"
+  name: 题库
+  url: 
+- id: "pictureFilesAndScreenshots"
+  name: 图片/截图/人物
+  url: 
+- id: "shapesCaptionsAndTextBoxes"
+  name: 形状/对话框/文本框
+  url: 
+- id: "text"
+  name: 文本
+  url: 
+- id: "formattingStyle"
+  name: 格式化/样式
+  url: 
+- id: "无障碍"
+  name: 无障碍功能
+  url: 
+- id: "zoomRegions"
+  name: 缩放区域
+  url: 
+- id: "media"
+  name: 媒体
+  url: 
+- id: "screenRecordings"
+  name: 屏幕录制
+  url: 
+- id: "interactiveObjects"
+  name: 交互对象
+  url: 
+- id: "timelineStates"
+  name: 时间轴/状态
+  url: 
+- id: "animationsAndSlideTransitions"
+  name: 动画/幻灯片过渡
+  url: 
+- id: "theme"
+  name: 主题
+  url: 
+- id: "player"
+  name: 播放器
+  url: 
+- id: "previewingAPublishing"
+  name: 预览和发布
+  url: 
+- id: "resources"
+  name: 推荐资源
+  url: 

@@ -1,0 +1,108 @@
+.k-search {
+    line-height: normal;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    box-sizing: border-box;
+    max-width: 720px;
+    height: 48px;
+    margin-right: auto;
+    margin-left: auto;
+    cursor: text;
+    opacity: 1;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.04);
+    -webkit-box-align: center;
+    box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.k-focus{
+    border: 1px solid rgba(0,0,0,0.12);
+    background: rgba(255,255,255,1);
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.24);
+}
+
+.k-icon {
+    margin: auto 8px;
+}
+
+.k-text {
+    font-size: 16px;
+    margin: auto;
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+}
+
+.k-text input {
+    width: 100%;
+     color: black;
+    border: 0;
+    outline: 0;
+    background: 0 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+input[type="text"]:focus:not([readonly]){
+    border-bottom: 0px solid #26a69a;
+    box-shadow: 0 0px 0 0 #26a69a;
+}
+
+.k-content-background{
+    background-color: #4285f4;
+    height: 398px;
+    position: absolute;
+    top: 56px;
+    width: 100%;
+    outline: none;
+    display: block;
+}
+@media (min-width: 600px) {
+.k-content-background{
+    top: 60px;
+}
+}
+@media (min-width: 1024px) {
+.k-content-background{
+    top: 64px;
+}
+}
+.k-sl-item a{
+    padding:13px;
+    outline:none;
+    text-decoration:none;
+    color: black;
+}
+.k-sl-item img{
+    max-width:64px;
+}
+.k-sl-item ip{
+    margin-top:14px;margin-bottom:0px;line-height:32px;font-size:16px;
+}
+.k-additional-resources{
+    padding-top: 32px;
+}
+.post-authors img{
+    max-width:64px;
+    margin-top: 14px;
+}
+.post-authors{
+    outline:none;
+    text-decoration:none;
+    color: black;
+}
+#toc a{
+    text-align: left;
+    color: white;
+}

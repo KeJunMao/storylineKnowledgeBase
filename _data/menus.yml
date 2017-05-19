@@ -1,0 +1,6 @@
+- name: 首页
+  url: /
+  icon: home
+- name: 关于
+  url: /about.html
+  icon: "&#xe7fd;"

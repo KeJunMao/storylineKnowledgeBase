@@ -1,0 +1,65 @@
+---
+layout: default
+---
+<div class="mdui-row">
+    <div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-8">
+        <div class="mdui-card">
+            <div class="mdui-card-content">
+                <div class="mdui-typo">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="mdui-card">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title">Authors</div>
+                <div class="mdui-card-primary-subtitle">攥写本文章的作者们</div>
+            </div>
+            <div class="mdui-card-content">
+            <div class="mdui-row-sm-6 mdui-row-md-6">
+                {% for authors in page.authors %} {% assign author = site.data.authors.[authors] %}
+                <div class="mdui-col">
+                    <div class="mdui-hoverable mdui-ripple">
+                        <a class="post-authors mdui-text-center" href="{{author.url}}">
+                            <img class="mdui-center" src="{{author.img}}" alt="">
+                            <p>{{authors}}</p>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="mdui-card">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title">Helpers</div>
+                <div class="mdui-card-primary-subtitle">曾帮助攥写本文章的人们</div>
+            </div>
+            <div class="mdui-card-content">
+            <div class="mdui-row-sm-6 mdui-row-md-6">
+                {% for helpers in page.helpers %} {% assign helper = site.data.helpers.[helpers] %}
+                <div class="mdui-col">
+                    <div class="mdui-hoverable mdui-ripple">
+                        <a class="post-authors mdui-text-center" href="{{helper.url}}">
+                            <img class="mdui-center" src="{{helper.img}}" alt="">
+                            <p>{{helpers}}</p>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="mdui-card">
+            <div class="mdui-card-content">
+                {% include gentie163.html %}
+            </div>
+        </div>
+    </div>
+    <div class="mdui-hidden-sm-down mdui-col-md-4">
+        {% include toc.html %}
+    </div>
+</div>
