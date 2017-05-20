@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Storyline 1 知识库
-v: 1
+title: Storyline 360 知识库
+v: 360
 ---
 
 <div class="mdui-row">
@@ -9,7 +9,7 @@ v: 1
         <div class="mdui-card">
             <div class="mdui-card-content">
                 <div class="mdui-container">
-                    <p style="font-size:24px;margin:16px 0px;">欢迎使用 Storyline {{page.v}} 知识库</p>
+                    <p style="font-size:24px;margin:16px 0px;">欢迎使用 Storyline  {{page.v}}  知识库</p>
                 </div>
             </div>
             <div class="mdui-panel mdui-panel-gapless" mdui-panel="{accordion: true}">
@@ -21,7 +21,7 @@ v: 1
                     <div class="mdui-panel-item-body">
                 {% for post in site.posts %}
                 {% if post.hot %}
-                {% if post.storyline.v1 %}
+                {% if post.storyline.v360 %}
                         <a class="mdui-btn mdui-btn-block" href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
                 {% endif %}
                 {% endif %}
@@ -38,7 +38,7 @@ v: 1
                 {% for post in site.posts %}
                 {% assign x = post.category %}
                 {% if x == categorie.id %}
-                {% if post.storyline.v1 %}
+                {% if post.storyline.v360 %}
                         <a class="mdui-btn mdui-btn-block" href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a>
                 {% endif %}
                 {% endif %}
