@@ -38,7 +38,7 @@ storyline:
 ## 安装破解补丁
 
 1. 解压文件，得到`Articulate.Runtime.dll` 和 `Articulate.Windows.Forms.dll` 共两个文件。
-2. 复制解压得到的那两个文件，粘贴至`C:\Program Files (x86)\Articulate\Storyline 2`或你安装 storyline 2 的根目录。
+2. 复制解压得到的那两个文件，**覆盖**至`C:\Program Files (x86)\Articulate\Storyline 2`或你安装 storyline 2 的根目录。
 3. 打开storyline 2，享受～
 
 ## 参考
