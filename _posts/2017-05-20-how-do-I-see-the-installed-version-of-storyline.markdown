@@ -9,6 +9,7 @@ tags: 查看 已安装 版本
 authors: 
  - KeJun 
 helpers: 
+ - 小访客
 storyline: 
    v1: true
    v2: true
@@ -21,7 +22,9 @@ storyline:
 ## win7
 
 1. 双击桌面的`计算机`图标。
-2. 进入`C:\Program Files (x86)\Articulate`文件夹。
+2. 按下面的提示进入正确的文件夹。
+    * 32位系统进入： `C:\Program Files\Articulate`
+    * 64位系统进入： `C:\Program Files (x86)\Articulate`
 3. 在这里你可以查看你已经安装的大版本，截至文章更新你可能会看到如下文件夹：
     * `Storyline 1`
     * `Storyline 2`
@@ -37,7 +40,9 @@ storyline:
 ## win10
 
 1. 双击桌面的`此电脑`图标。
-2. 进入`C:\Program Files (x86)\Articulate`文件夹。
+2. 按下面的提示进入正确的文件夹。
+    * 32位系统进入： `C:\Program Files\Articulate`
+    * 64位系统进入： `C:\Program Files (x86)\Articulate`
 3. 在这里你可以查看你已经安装的大版本，截至文章更新你可能会看到如下文件夹：
     * `Storyline 1`
     * `Storyline 2`
