@@ -7,7 +7,7 @@ layout: default
             <div class="mdui-card-content k-card-content" id="k-page-content">
                 <div class="mdui-typo">
                     <div class="mdui-tab" mdui-tab>
-                      <a href="#example1-tab1" class="mdui-ripple">文章兼容的版本</a>
+                      <a href="#example1-tab1" class="mdui-ripple">文章兼容</a>
                       <a href="#example1-tab2" class="mdui-ripple">文章标签</a>
                       <a href="#example1-tab3" class="mdui-ripple">文章日期</a>
                     </div>
@@ -17,7 +17,7 @@ layout: default
                           <li class="mdui-list-item mdui-ripple">
                             <div class="mdui-list-item-content">{{site.data.version.storyline.name}}-{{v.v}}</div>
                             {% assign version = v.v | prepend:'v' %}
-                            {% if page.storyline.[version] %}
+                            {% if page.storyline[version] %}
                             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe5ca;</i>
                             {% else %}
                             <i class="mdui-list-item-icon mdui-icon material-icons">&#xe14c;</i>
@@ -41,11 +41,6 @@ layout: default
                           <li class="mdui-list-item mdui-ripple">{{ page.lastDate | date: '%B %d, %Y' }}</li>
                         </ul>
                     </div>
-
-
-
-
-
                     {{ content }}
                 </div>
             </div>
@@ -72,6 +67,7 @@ layout: default
             </div>
         </div>
         <br>
+        {% if page.helpers =="" %}
         <div class="mdui-card">
             <div class="mdui-card-primary k-card-content">
                 <div class="mdui-card-primary-title">Helpers</div>
@@ -92,6 +88,7 @@ layout: default
             </div>
             </div>
         </div>
+        {% endif %}
         <br>
         <div class="mdui-card">
             <div class="mdui-card-content">

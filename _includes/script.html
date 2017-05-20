@@ -1,9 +1,7 @@
 <script src="{{ "/assets/js/mdui.js " | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="{{ "/assets/js/toc.js " | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/toc.min.js " | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/pushpin.js " | prepend: site.baseurl }}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
-
 <script>
     $(document).ready(function(){
       $("#search-input").blur(function(){
@@ -12,21 +10,21 @@
       $("#search-input").focus(function(){
         $('.k-search').addClass('k-focus');
       });
+      $("#night").click(function(){
+        $('body').addClass('mdui-theme-layout-dark')
+      })
 {% if page.layout=='post' %}
-      $('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2' });
-      $('#toc').on('click', 'a', function() {
-        var target = $(this.getAttribute('href'))
-        , scroll_target = target.offset().top
-        $(window).scrollTo(scroll_target - 64,800);
-      return false
-    });
-
-    var tocBottom = $('#k-page-content').offset().top + $('#k-page-content').height() - 64;
+      $('#toc').toc({
+        'selectors': 'h2',
+        'prefix': 'toc',
+        'highlightOffset': 64
+      });
+    var tocBottom = $('#k-page-content').parent().offset().top + $('#k-page-content').parent().height() - $('#toc-card').height();
     $('#toc-card').pushpin({
       top: 154,
       bottom: tocBottom,
       offset: 128
     });
-  });
-</script>
 {% endif  %}
+});
+</script>
