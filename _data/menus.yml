@@ -4,6 +4,15 @@
 - name: TODO
   url: /todo.html
   icon: "&#xe22b;"
+- name: 捐赠
+  url: /donate.html
+  icon: "&#xe8a1;"
+- name: 贡献指南
+  url: /join.html
+  icon: "&#xe8e5;"
+- name: 反馈
+  url: /feedback.html
+  icon: "&#xe8dd;"
 - name: 关于
   url: /about.html
   icon: "&#xe7fd;"

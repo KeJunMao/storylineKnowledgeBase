@@ -1,0 +1,47 @@
+---
+layout: default
+title: 捐赠
+---
+<div class="mdui-row">
+    <div class="mdui-col-sm-6">
+        <div class="mdui-card">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title">支付宝</div>
+                <div class="mdui-card-primary-subtitle">使用支付宝捐赠</div>
+            </div>
+            <div class="mdui-card-content">
+                <img class="mdui-center" src="https://dummyimage.com/300/ffffff/000000.png" alt="">
+                <br>
+            </div>
+        </div>
+    </div>
+    <div class="mdui-col-sm-6">
+        <div class="mdui-card">
+            <div class="mdui-card-primary">
+                <div class="mdui-card-primary-title">微信</div>
+                <div class="mdui-card-primary-subtitle">使用微信捐赠</div>
+            </div>
+            <div class="mdui-card-content">
+                <img class="mdui-center" src="https://dummyimage.com/300/ffffff/000000.png" alt="">
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mdui-row">
+    <div class="mdui-col-sm-12">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">捐赠列表</div>
+            <div class="mdui-card-primary-subtitle">感谢所有的捐赠者对我已有工作的肯定～</div>
+        </div>
+        <div class="mdui-card-content">
+            <ul class="mdui-list mdui-row-sm-6">
+                {% for d in site.data.donate %}
+                <li class="mdui-list-item mdui-ripple mdui-col">{{ d.name }}：<b>{{ d.money }}元</b></li>
+                {% endfor %}
+            </ul>
+            <br>
+            数据手动更新可能有所延迟，抱歉。
+        </div>
+    </div>
+</div>
