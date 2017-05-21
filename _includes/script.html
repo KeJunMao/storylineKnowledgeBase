@@ -39,7 +39,7 @@
     });
     $("#k-page-url-btn").click(function(){
       $.ajax({
-        url: "https://50r.cn/short_url.json",
+        url: "https://api.t.sina.com.cn/short_url/shorten.json",
         type: "GET",
         dataType:"jsonp",
         cache: false,
@@ -48,16 +48,12 @@
           url_long:"{{site.url}}{{page.url}}"
         },
         success: function (data, status) {   
-
+          $("#k-page-url").val(data.short_url);
         },   
         error: function(obj,info,errobj){
           console.log(info)
         }
       })
-      // $.getJSON("https://50r.cn/short_url.json?source=3271760578&url_long={{site.url}}{{page.url}}",function(data){
-      //     console.log(data);
-      //     return false;
-      // })
     })
 {% endif  %}
 });
