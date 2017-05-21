@@ -148,7 +148,8 @@ input[type="text"]:focus:not([readonly]){
     background-color: transparent;
 }
 #toc ul li{
-    min-width: 400px;
+    max-width: 300px;
+    min-width: 200px;
 }
 #toc ul .toc-active{
     border-left: 3px solid #fff;

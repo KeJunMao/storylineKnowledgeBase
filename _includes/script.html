@@ -13,6 +13,14 @@
       $("#search-input").focus(function(){
         $('.k-search').addClass('k-focus');
       });
+      // $('header a').click(function(){
+      //   if ($("#drawer").hasClass("mdui-drawer-open")){
+      //     $(".k-content-background").css('width',$(".k-content-background").width() - 240)
+      //   }else{
+      //     $(".k-content-background").css('width','100%')
+      //   }
+      // })
+      
 {% if page.layout=='post' %}
       $('#toc').toc({
         'selectors': 'h2',
@@ -39,6 +47,7 @@
       render: "image"
 
     });
+
     $("#k-page-url-btn").click(function(){
       $.ajax({
         url: "https://api.t.sina.com.cn/short_url/shorten.json",
@@ -53,7 +62,9 @@
           $("#k-page-url").val(data.short_url);
         },   
         error: function(obj,info,errobj){
-          console.log(info)
+          console.log(info);
+          console.log(obj);
+          console.log(errobjobj);
         }
       })
     })
