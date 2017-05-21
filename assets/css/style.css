@@ -187,3 +187,8 @@ input[type="text"]:focus:not([readonly]){
 .mdui-typo thead tr th{
     font-weight: bold;
 }
+#qrcode img{
+    display: block !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
