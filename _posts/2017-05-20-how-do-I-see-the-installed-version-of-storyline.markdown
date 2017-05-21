@@ -4,7 +4,7 @@ title:  "如何查看已安装的 Storyline 版本?"
 date:   2017-05-20 15:01:06 +0800
 lastDate: 2017-05-20 15:01:06 +0800
 category: "downloadInstallOpen"
-hot: true
+hot: false
 tags: 查看 已安装 版本
 authors: 
  - KeJun 
