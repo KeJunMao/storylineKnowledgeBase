@@ -138,6 +138,9 @@ input[type="text"]:focus:not([readonly]){
     will-change: box-shadow;
     -webkit-user-drag: none;
 }
+#toc-card{
+    width: 260px;
+}
 #toc a:hover{
     background-color: rgba(0, 0, 0, .1);
 }
