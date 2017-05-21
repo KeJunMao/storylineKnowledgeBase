@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+{% include busuanzi.html %}
 <div class="mdui-row">
     <div class="mdui-col-xs-12 mdui-col-sm-12 mdui-col-md-8">
         <div class="mdui-card">
@@ -10,6 +11,8 @@ layout: default
                       <a href="#example1-tab1" class="mdui-ripple">文章兼容</a>
                       <a href="#example1-tab2" class="mdui-ripple">文章标签</a>
                       <a href="#example1-tab3" class="mdui-ripple">文章日期</a>
+                      <a href="#example1-tab4" class="mdui-ripple">文章阅读量</a>
+                      <a href="#example1-tab5" class="mdui-ripple">分享</a>
                     </div>
                     <div id="example1-tab1" class="mdui-p-a-2">
                         <ul class="mdui-list">
@@ -39,6 +42,36 @@ layout: default
                           <li class="mdui-list-item mdui-ripple">{{ page.date | date: '%B %d, %Y' }}</li>
                           <li class="mdui-subheader">最后更新：</li>
                           <li class="mdui-list-item mdui-ripple">{{ page.lastDate | date: '%B %d, %Y' }}</li>
+                        </ul>
+                    </div>
+                    <div id="example1-tab4" class="mdui-p-a-2">
+                        <ul class="mdui-list" id="busuanzi_container_site_pv">
+                          <li class="mdui-subheader">本站总访问量:</li>
+                          <li class="mdui-list-item mdui-ripple"><span id="busuanzi_value_site_pv"></span>次</li>
+                          <li class="mdui-subheader">本文总阅读量:</li>
+                          <li class="mdui-list-item mdui-ripple"><span id="busuanzi_value_page_pv"></span>次</li>
+                        </ul>
+                    </div>
+                    <div id="example1-tab5" class="mdui-p-a-2">
+                        <ul class="mdui-list mdui-row-sm-2">
+                            <div class="mdui-col">
+                                <li class="mdui-subheader">分享到：</li>
+                                <li class="mdui-list-item mdui-ripple"><a target="_blank" href="http://service.weibo.com/share/share.php?appkey=&title={{page.title}}&url={{site.url}}{{page.url}}&pic=&searchPic=false&style=simple">微博</a></li>
+                                <li class="mdui-list-item mdui-ripple"><a target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?site={{site.title}}&title={{page.title}}&summary=欢迎使用{{site.title}}&url={{site.url}}{{page.url}}">QQ</a></li>
+                                <li class="mdui-subheader">链接：</li>
+                                <li class="mdui-ripple">
+                                    <div class="mdui-texfield">
+                                        <input id="k-page-url" class="mdui-textfield-input" type="text" value="{{site.url}}{{page.url}}" readonly/>
+                                    </div>
+                                </li>
+                                <a id="k-page-url-btn" class="mdui-btn mdui-ripple mdui-center" href="javascript:;">缩短网址</a>
+                            </div>
+                          <div class="mdui-col">
+                              <li class="mdui-subheader">二维码:</li>
+                          <li class="mdui-list-item mdui-ripple">
+                              <img class="mdui-center" id="qrcode"></img>
+                          </li>
+                          </div>
                         </ul>
                     </div>
                     {{ content }}

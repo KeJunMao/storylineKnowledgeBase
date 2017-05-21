@@ -2,6 +2,9 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="{{ "/assets/js/toc.min.js " | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/pushpin.js " | prepend: site.baseurl }}"></script>
+{% if page.layout=='post' %}
+<script type="text/javascript" src="{{ "/assets/js/jquery-qrcode-0.14.0.min.js " | prepend: site.baseurl }}"></script>
+{% endif  %}
 <script>
     $(document).ready(function(){
       $("#search-input").blur(function(){
@@ -22,6 +25,40 @@
       bottom: tocBottom,
       offset: 128
     });
+    $("#busuanzi_container_site_pv").css('display','block');
+    $("#qrcode").qrcode({
+      size: 200,
+      text: '{{site.url}}{{page.url}}',
+      radius: 0,
+      mode: 1,
+      label: 'Storyline KnowledgeBase',
+      fontname:"ubuntu",
+      fontcolor: '#4285f4',
+      fill: '#4285f4',
+      mSize:0.07
+    });
+    $("#k-page-url-btn").click(function(){
+      $.ajax({
+        url: "https://50r.cn/short_url.json",
+        type: "GET",
+        dataType:"jsonp",
+        cache: false,
+        data:{
+          source:3271760578,
+          url_long:"{{site.url}}{{page.url}}"
+        },
+        success: function (data, status) {   
+
+        },   
+        error: function(obj,info,errobj){
+          console.log(info)
+        }
+      })
+      // $.getJSON("https://50r.cn/short_url.json?source=3271760578&url_long={{site.url}}{{page.url}}",function(data){
+      //     console.log(data);
+      //     return false;
+      // })
+    })
 {% endif  %}
 });
 </script>
