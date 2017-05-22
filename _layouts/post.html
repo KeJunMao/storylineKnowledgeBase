@@ -53,8 +53,8 @@ layout: default
                         </ul>
                     </div>
                     <div id="example1-tab5" class="mdui-p-a-2">
-                        <ul class="mdui-list mdui-row-sm-2">
-                            <div class="mdui-col">
+                        <div class="mdui-list mdui-row-sm-2" >
+                            <div class="mdui-col" style="display: inline;">
                                 <li class="mdui-subheader">分享到：</li>
                                 <li class="mdui-list-item mdui-ripple"><a target="_blank" href="http://service.weibo.com/share/share.php?appkey=&title={{page.title}}&url={{site.url}}{{page.url}}&pic=&searchPic=false&style=simple">微博</a></li>
                                 <li class="mdui-list-item mdui-ripple"><a target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?site={{site.title}}&title={{page.title}}&summary=欢迎使用{{site.title}}&url={{site.url}}{{page.url}}">QQ</a></li>
@@ -66,12 +66,12 @@ layout: default
                                 </li>
                                 <a id="k-page-url-btn" class="mdui-btn mdui-ripple mdui-center" href="javascript:;">缩短网址</a>
                             </div>
-                          <div class="mdui-col">
+                          <div class="mdui-col" style="display: inline;">
                               <li class="mdui-subheader">二维码:</li>
                           <li class="mdui-list-item mdui-ripple" id="qrcode">
                           </li>
                           </div>
-                        </ul>
+                        </div>
                     </div>
                     {{ content }}
                 </div>

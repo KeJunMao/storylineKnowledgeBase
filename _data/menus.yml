@@ -2,17 +2,17 @@
   url: /
   icon: home
 - name: TODO
-  url: /todo.html
+  url: /pages/menus/todo.html
   icon: "&#xe22b;"
 - name: 捐赠
-  url: /donate.html
+  url: /pages/menus/donate.html
   icon: "&#xe8a1;"
 - name: 贡献指南
-  url: /join.html
+  url: /pages/menus/join.html
   icon: "&#xe8e5;"
 - name: 反馈
-  url: /feedback.html
+  url: /pages/menus/feedback.html
   icon: "&#xe8dd;"
 - name: 关于
-  url: /about.html
+  url: /pages/menus/about.html
   icon: "&#xe7fd;"
