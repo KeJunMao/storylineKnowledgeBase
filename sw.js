@@ -1,12 +1,8 @@
 ---
 layout: null
 ---
-
-
 var cacheName = 'madhur-cache-v1';
 var filesToCache = [
-    // Stylesheets
-    // Pages and assets
     {% for page in site.pages %}
         {% if page.url contains 'projects' or page.url contains '404'   %}
             
@@ -16,13 +12,10 @@ var filesToCache = [
         
     {% endfor %}
 
-    // Blog posts
     {% for post in site.posts %}
         '{{ post.url }}',
     {% endfor %}
 
-    // JS files, Portfolio assets and main video
-    // (!) This will throw a Liquid error. Read below.
     {% for file in site.static_files %}
               '{{ file.path }}',
     {% endfor %}

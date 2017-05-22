@@ -1,4 +1,4 @@
-<script src="{{ "/assets/js/mdui.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js/mdui.min.js " | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="{{ "/assets/js/toc.min.js " | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/pushpin.js " | prepend: site.baseurl }}"></script>
@@ -19,15 +19,7 @@
       });
       $("#search-input").focus(function(){
         $('.k-search').addClass('k-focus');
-      });
-      // $('header a').click(function(){
-      //   if ($("#drawer").hasClass("mdui-drawer-open")){
-      //     $(".k-content-background").css('width',$(".k-content-background").width() - 240)
-      //   }else{
-      //     $(".k-content-background").css('width','100%')
-      //   }
-      // })
-      
+      });    
 {% if page.layout=='post' %}
       $('#toc').toc({
         'selectors': 'h2',
@@ -70,7 +62,6 @@
           console.log(error);
         },
         success: function (data) {   
-          // $("#k-page-url").val(data);
           console.log(data)
         },   
         error: function(obj,info){

@@ -1,5 +1,6 @@
 url: https://storyline.kejun.space
 baseurl: 
+description: 打造适用于所有版本的Storyline知识库！
 title: StoryLine 知识库
 gems:
   - jekyll-sitemap
