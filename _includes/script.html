@@ -2,6 +2,13 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="{{ "/assets/js/toc.min.js " | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/pushpin.js " | prepend: site.baseurl }}"></script>
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("{{ "/sw.js" | relative_url }}").then(function() {
+      console.log("Service Worker Registered");
+    });
+  }
+  </script>
 {% if page.layout=='post' %}
 <script type="text/javascript" src="{{ "/assets/js/jquery-qrcode-0.14.0.min.js " | prepend: site.baseurl }}"></script>
 {% endif  %}
@@ -50,21 +57,25 @@
 
     $("#k-page-url-btn").click(function(){
       $.ajax({
-        url: "https://api.t.sina.com.cn/short_url/shorten.json",
+        url: "http://www.xiaoxiangzi.com/tool/dwz.asp",
         type: "GET",
         dataType:"jsonp",
+        jsonp:true,
         cache: false,
         data:{
-          source:3271760578,
-          url_long:"{{site.url}}{{page.url}}"
+          domain:"{{site.url}}{{page.url}}"
         },
-        success: function (data, status) {   
-          $("#k-page-url").val(data.short_url);
+        crossDomain:true,
+        complete:function(data,error){
+          console.log(error);
+        },
+        success: function (data) {   
+          // $("#k-page-url").val(data);
+          console.log(data)
         },   
-        error: function(obj,info,errobj){
+        error: function(obj,info){
           console.log(info);
           console.log(obj);
-          console.log(errobjobj);
         }
       })
     })

@@ -1,0 +1,15 @@
+# humanstxt.org/
+
+Thanks for looked at my humans.txt!
+
+/* TEAM */
+Developer: KeJun
+Site: https://kejun.space
+Twitter: @yrmkejun
+Location: China
+
+/* SITE */
+Last update: 2017/5/22
+Standards: HTML5, CSS3,JavaScript
+Components: MDUI, jQuery
+Software: Gun/Linux

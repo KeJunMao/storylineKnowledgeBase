@@ -1,0 +1,25 @@
+{
+  "version": "1.0.0",
+  "name": "Storyline 知识库",
+  "launch_path": "/index.html",
+  "description": "",
+  "icons": {
+    "128": "/assets/images/touch/icon-128x128.png"
+  },
+  "developer": {
+    "name": "KeJun",
+    "url": "https://kejun.space"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "zh-cn",
+  "permissions": {
+  },
+  "locales": {
+    "zh-cn": {
+      "name": "Storyline 知识库",
+      "description": "适用于所有版本的SL知识库"
+    }
+  }
+}

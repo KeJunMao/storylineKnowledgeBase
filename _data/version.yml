@@ -3,13 +3,13 @@ storyline:
    v:
     - v: 1
       icon: /assets/images/storyline1.png
-      url: /pages/v1/index.html
+      url: /pages/v1/
     - v: 2
       icon: /assets/images/storyline2.png
-      url: /pages/v2/index.html
+      url: /pages/v2/
     - v: 3
       icon: /assets/images/storyline3.png
-      url: /pages/v3/index.html
+      url: /pages/v3/
     - v: 360
       icon: /assets/images/storyline360.png
-      url: /pages/v360/index.html
+      url: /pages/v360/
