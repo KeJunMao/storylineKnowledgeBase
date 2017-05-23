@@ -1,7 +1,9 @@
-<script src="{{ "/assets/js/mdui.min.js " | prepend: site.baseurl }}"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script type="text/javascript" src="{{ "/assets/js/toc.min.js " | prepend: site.baseurl }}"></script>
-<script type="text/javascript" src="{{ "/assets/js/pushpin.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js/mdui.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="{{ "/assets/js/toc.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/pushpin.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/jquery.typeahead.min.js" | prepend: site.baseurl }}"></script>
+
   <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register("{{ "/sw.js" | relative_url }}").then(function() {
@@ -13,12 +15,55 @@
 <script type="text/javascript" src="{{ "/assets/js/jquery-qrcode-0.14.0.min.js " | prepend: site.baseurl }}"></script>
 {% endif  %}
 <script>
-    $(document).ready(function(){
-      $("#search-input").blur(function(){
-        $('.k-search').removeClass('k-focus');
+ $(document).ready(function(){
+      var names = new Array();
+      var urls = new Array(); 
+      $.getJSON("/search.json").done(function(data){
+        for (var index in data){
+          var item = data[index];
+          names[index] = item.title;
+          urls[names[index]] = item.url
+        }
+
+$.typeahead({
+    input: '.js-typeahead-country_v1',
+    order: "desc",
+    source: {
+        data: names
+    },
+    selector: {
+        container: "k-search",
+        result: " mdui-card k-search-card",
+        list: "mdui-list",
+        group: "typeahead__group",
+        item: "mdui-list-item",
+        empty: "typeahead__empty",
+        display: "typeahead__display",
+        query: "typeahead__query",
+        filter: "typeahead__filter",
+        filterButton: "typeahead__filter-button",
+        dropdown: "typeahead__dropdown",
+        dropdownItem: "typeahead__dropdown-item",
+        button: "typeahead__button",
+        backdrop: "typeahead__backdrop",
+        hint: "typeahead__hint",
+        cancelButton: "typeahead__cancel-button"
+    },
+    callback: {
+        onClick: function (node,a,item,event){
+          window.location.href = urls[item.display];
+        },
+    }
+});
       });
-      $("#search-input").focus(function(){
+
+      $(".js-typeahead-country_v1").blur(function(){
+        $('.k-search').removeClass('k-focus');
+        setTimeout('$(".k-search-card").hide(100);',100)
+      });
+      $(".js-typeahead-country_v1").focus(function(){
         $('.k-search').addClass('k-focus');
+        $(".k-search-card").css("display","block");
       });    
 {% if page.layout=='post' %}
       $('#toc').toc({
@@ -46,30 +91,17 @@
       render: "image"
 
     });
-
-    $("#k-page-url-btn").click(function(){
-      $.ajax({
-        url: "http://www.xiaoxiangzi.com/tool/dwz.asp",
-        type: "GET",
-        dataType:"jsonp",
-        jsonp:true,
-        cache: false,
-        data:{
-          domain:"{{site.url}}{{page.url}}"
-        },
-        crossDomain:true,
-        complete:function(data,error){
-          console.log(error);
-        },
-        success: function (data) {   
-          console.log(data)
-        },   
-        error: function(obj,info){
-          console.log(info);
-          console.log(obj);
-        }
-      })
-    })
 {% endif  %}
+{% if page.title == "Tags" %}
+(function ($) {
+  $.getUrlParam = function (name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return decodeURI(r[2]); return null;
+  }
+})(jQuery);
+var test =  $.getUrlParam('tag');
+console.log(test);
+{% endif %}
 });
 </script>

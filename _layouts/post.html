@@ -32,7 +32,7 @@ layout: default
                     <div id="example1-tab2" class="mdui-p-a-2">
                             {% for tag in page.tags %}
                         <div class="mdui-chip">
-                          <span class="mdui-chip-title">{{tag}}</span>
+                          <span class="mdui-chip-title"><a href="/pages/tags.html?tag={{tag}}">{{tag}}</a></span>
                         </div>
                         {% endfor %}
                     </div>

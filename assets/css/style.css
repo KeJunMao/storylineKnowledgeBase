@@ -196,3 +196,9 @@ input[type="text"]:focus:not([readonly]){
     margin-right: auto !important;
     margin-left: auto !important;
 }
+
+.k-search-card{
+    top: 64px;
+    position: absolute;
+    width: 720px;
+}

@@ -1,0 +1,12 @@
+---
+---
+[
+  {% for tag in site.tags %}
+    {
+      "name"    : "{{ tag[0] }}",
+      "size"    : "{{ tag[1] | size }}",{% for post in tag[1] %}
+      "url"      : "{{ post.url }}",
+      "title"      : "{{ post.url }}"{% endfor %}
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
