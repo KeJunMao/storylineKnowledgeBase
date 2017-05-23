@@ -1,2 +1,6 @@
-# - name: 
-#   money: 
+- name: 小林-支付宝捐赠
+  money: 66
+- name: xyx-微信捐赠
+  money: 10
+- name: 彭鹤鸣-微信捐赠
+  money: 50

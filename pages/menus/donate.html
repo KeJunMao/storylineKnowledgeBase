@@ -37,11 +37,30 @@ title: 捐赠
         <div class="mdui-card-content">
             <ul class="mdui-list mdui-row-sm-6">
                 {% for d in site.data.donate %}
+                {% capture allmoney = 0 %}{{ allmoney | plus: d.money }}{% endcapture %}
                 <li class="mdui-list-item mdui-ripple mdui-col">{{ d.name }}：<b>{{ d.money }}元</b></li>
                 {% endfor %}
+                <li class="mdui-list-item mdui-ripple mdui-col"><b>总金额： {{allmoney}}元</b></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="mdui-row">
+    <div class="mdui-col-sm-12">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">捐赠用途</div>
+            <div class="mdui-card-primary-subtitle">所有捐赠的用途公开透明～</div>
+        </div>
+        <div class="mdui-card-content">
+            <ul class="mdui-list mdui-row-sm-2">
+                {% for d in site.data.money %}
+                <li class="mdui-list-item mdui-ripple mdui-col">{{ d.name }}：<b>{{ d.money }}元</b></li>
+                {% capture allmoney = 0 %}{{ allmoney | minus: d.money }}{% endcapture %}
+                {% endfor %}
+                <li class="mdui-list-item mdui-ripple mdui-col"><b>余额： {{allmoney}}元</b></li>
             </ul>
             <br>
-            数据手动更新可能有所延迟，抱歉。
+            所有数据手动更新可能有所延迟，抱歉。
         </div>
     </div>
 </div>
