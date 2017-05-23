@@ -71,7 +71,7 @@ $.typeahead({
         'prefix': 'toc',
         'highlightOffset': 64
       });
-    var tocBottom = $('#k-page-content').parent().offset().top + $('#k-page-content').parent().height() - $('#toc-card').height();
+    var tocBottom = $('#k-page-content').offset().top + $('#k-page-content').height() - $('#toc-card').height();
     $('#toc-card').pushpin({
       top: 154,
       bottom: tocBottom,
