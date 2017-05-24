@@ -3,6 +3,8 @@
 <script type="text/javascript" src="{{ "/assets/js/toc.min.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/pushpin.js" | prepend: site.baseurl }}"></script>
 <script type="text/javascript" src="{{ "/assets/js/jquery.typeahead.min.js" | prepend: site.baseurl }}"></script>
+<script type="text/javascript" src="{{ "/assets/js/jquery.scrollToTop.js" | prepend: site.baseurl }}"></script>
+
 
   <script>
   if ('serviceWorker' in navigator) {
@@ -16,6 +18,7 @@
 {% endif  %}
 <script>
  $(document).ready(function(){
+   $("#toTop").scrollToTop();
       var names = new Array();
       var urls = new Array(); 
       $.getJSON("/search.json").done(function(data){

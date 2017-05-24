@@ -202,3 +202,9 @@ input[type="text"]:focus:not([readonly]){
     position: absolute;
     width: 720px;
 }
+
+.k-mdui-headroom-unpinned-top{
+    box-shadow: none!important;
+    -webkit-transform: translate3d(0,-100%,0)!important;
+    transform: translate3d(0,400%,0)!important;
+}
